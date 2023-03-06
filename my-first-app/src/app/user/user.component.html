@@ -1,0 +1,14 @@
+<h1>Welcome</h1>
+<label>User Name</label>
+<!-- <input type="text" class="form-control" [(ngModel)]="username" (input)="onUserNameInput($event)"/> -->
+<input type="text" class="form-control" [(ngModel)]="username" />
+<p>{{ username }}</p>
+<!-- <button class="btn btn-primary" [disabled] = "!isAddUserButtonEnabled" (click)="onAddUser()">Reset User</button> -->
+<!-- <button class="btn btn-primary" [disabled] = "username === ''" (click)="onReset()">Reset User</button><button class="btn btn-primary" [disabled] = "username === ''" (click)="onReset()">Reset User</button> -->
+<button
+  class="btn btn-primary"
+  [disabled]="username === ''"
+  (click)="username = ''"
+>
+  Reset User
+</button>
