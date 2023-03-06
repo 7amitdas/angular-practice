@@ -12,3 +12,13 @@
 >
   Reset User
 </button>
+<button class="btn btn-warning" (click)="onClickDisplayDetails()">
+  Display Details
+</button>
+<p *ngIf="displaySecretPass">Secret Password : tuna</p>
+<p
+  *ngFor="let log of buttonLog; let indexOfelement=index;"
+  [ngStyle]="{ backgroundColor: getLogBackGroundColor(indexOfelement) }"
+  [ngClass]="{ colWhite: indexOfelement >= 4 }">
+  Index: {{indexOfelement}} : {{ log }}
+</p>
