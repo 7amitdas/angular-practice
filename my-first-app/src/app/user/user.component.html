@@ -19,6 +19,6 @@
 <p
   *ngFor="let log of buttonLog; let indexOfelement=index;"
   [ngStyle]="{ backgroundColor: getLogBackGroundColor(indexOfelement) }"
-  [ngClass]="{ colWhite: indexOfelement >= 4 }">
+  [ngClass]="{ 'colWhite': indexOfelement >= 4 }">
   Index: {{indexOfelement}} : {{ log }}
 </p>

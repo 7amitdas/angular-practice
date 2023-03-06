@@ -15,7 +15,7 @@ export class UserComponent {
   username: string = '';
   //isAddUserButtonEnabled = false;
   displaySecretPass: boolean = false;
-  buttonLog: number[] = [];
+  buttonLog: Date[] = [];
   // changeLogBackgroundColor: boolean = false;
   // changeLogTextColor: boolean = false;
 
@@ -36,11 +36,13 @@ export class UserComponent {
 
   onClickDisplayDetails() {
     this.displaySecretPass = !this.displaySecretPass;
-    if (this.displaySecretPass) {
-      this.buttonLog.push(1);
-    } else {
-      this.buttonLog.push(0);
-    }
+    // if (this.displaySecretPass) {
+    //   this.buttonLog.push(1);
+    // } else {
+    //   this.buttonLog.push(0);
+    // }
+    //this.buttonLog.push(this.buttonLog.length + 1);
+    this.buttonLog.push(new Date());
     // if (this.buttonLog.length >= 5) {
     //   this.changeLogBackgroundColor = true;
     //   this.changeLogTextColor = true;
