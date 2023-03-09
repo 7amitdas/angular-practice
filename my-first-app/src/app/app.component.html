@@ -1,3 +1,14 @@
 <!-- <app-servers></app-servers> -->
-<!-- <hr/> -->
-<app-user></app-user>
+<!-- <app-user></app-user> -->
+<div class="container">
+  <app-cockpit></app-cockpit>
+  <hr />
+  <div class="row">
+    <div class="col-xs-12">
+      <app-server-element
+        *ngFor="let serverElement of serverElements"
+        [srvElement]="serverElement"
+      >sdsd</app-server-element>
+    </div>
+  </div>
+</div>
