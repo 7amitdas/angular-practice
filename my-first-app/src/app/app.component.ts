@@ -47,4 +47,15 @@ export class AppComponent {
       this.oddNumbers.push(firedNo);
     }
   }
+
+  onGamePaused(firedNo: number) {
+
+  }
+
+  onGameStopped(firedNo: number) {
+    if (firedNo === 0) {
+      this.oddNumbers = [];
+      this.evenNumbers = [];
+    }
+  }
 }

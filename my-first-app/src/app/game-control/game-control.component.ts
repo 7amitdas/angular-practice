@@ -8,6 +8,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class GameControlComponent implements OnInit {
   counter: number = 0;
   @Output('startGame') intervalFired = new EventEmitter<number>();
+  @Output('stopGame') stopGame = new EventEmitter<number>();
   interval:any;
 
   constructor() {}
@@ -23,7 +24,13 @@ export class GameControlComponent implements OnInit {
     }, 1000);
   }
 
-  onClickEnd() {
+  onClickPause() {
     clearInterval(this.interval);
+  }
+
+  onClickStop() {
+    this.counter = 0;
+    clearInterval(this.interval);
+    this.stopGame.emit(this.counter);
   }
 }
