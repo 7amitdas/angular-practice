@@ -9,7 +9,7 @@ import {
   AfterContentInit,
   AfterContentChecked,
   AfterViewInit,
-  AfterViewChecked, OnDestroy, ViewChild, ElementRef
+  AfterViewChecked, OnDestroy, ViewChild, ElementRef, ContentChild
 } from '@angular/core';
 
 @Component({
@@ -31,6 +31,7 @@ export class ServerElementComponent
   @Input('srvElement') element: { type: string; name: string; content: string };
   @Input() name: string;
   @ViewChild('heading', {static: true}) header : ElementRef;
+  @ContentChild('contentParagraph', {static: true}) contentPara : ElementRef;
 
   // 1. Runs when a new Instance of this Component Created. (Single Call)
   constructor() {
@@ -47,6 +48,7 @@ export class ServerElementComponent
   ngOnInit() {
     console.log('ngOnInit Called');
     //console.log('Text Content:' + this.header.nativeElement.textContent);
+    //console.log('Paragraph Content:' + this.contentPara.nativeElement.textContent);
   }
 
   // 4. Run after Init when creating or onChanges when updating to check for any Changes are there in the component
@@ -68,6 +70,7 @@ export class ServerElementComponent
   ngAfterViewInit(): void {
     console.log('ngAfterViewInit Called');
     //console.log('Text Content:' + this.header.nativeElement.textContent);
+    //console.log('Paragraph Content:' + this.contentPara.nativeElement.textContent);
   }
 
   // 8. After View Init Checking of View Elements or After Every Do Check
