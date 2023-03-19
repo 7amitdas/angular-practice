@@ -6,7 +6,7 @@ import { Directive, ElementRef, HostBinding, HostListener, Input, OnInit, Render
 export class AdvancedDirDirective implements OnInit {
   @Input() defaultColor: string = 'blue';
   @Input() highlightColor: string = 'yellow';
-  @HostBinding('style.backgroundColor') backgroundColor: string = this.defaultColor;
+  @HostBinding('style.backgroundColor') backgroundColor: string;
   
   constructor(private elRef: ElementRef, private renderer: Renderer2) {}
 
@@ -17,6 +17,8 @@ export class AdvancedDirDirective implements OnInit {
     //   'background-color',
     //   'blue'
     // );
+    // Set Default Color in On Init to work with Dynamic Input
+    this.backgroundColor = this.defaultColor;
   }
 
   @HostListener('mouseenter')
