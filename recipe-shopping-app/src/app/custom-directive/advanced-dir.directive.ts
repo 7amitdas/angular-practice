@@ -1,10 +1,12 @@
-import { Directive, ElementRef, HostBinding, HostListener, OnInit, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostBinding, HostListener, Input, OnInit, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[appAdvancedDir]',
 })
 export class AdvancedDirDirective implements OnInit {
-  @HostBinding('style.backgroundColor') backgroundColor: string = 'green';
+  @Input() defaultColor: string = 'blue';
+  @Input() highlightColor: string = 'yellow';
+  @HostBinding('style.backgroundColor') backgroundColor: string = this.defaultColor;
   
   constructor(private elRef: ElementRef, private renderer: Renderer2) {}
 
@@ -13,7 +15,7 @@ export class AdvancedDirDirective implements OnInit {
     // this.renderer.setStyle(
     //   this.elRef.nativeElement,
     //   'background-color',
-    //   'green'
+    //   'blue'
     // );
   }
 
@@ -24,7 +26,7 @@ export class AdvancedDirDirective implements OnInit {
     //   'background-color',
     //   'yellow'
     // );
-    this.backgroundColor = 'yellow';
+    this.backgroundColor = this.highlightColor;
   }
 
   // Using Mouse Leave instead of Mouse Out Event
@@ -35,6 +37,6 @@ export class AdvancedDirDirective implements OnInit {
     //   'background-color',
     //   'blue'
     // );
-    this.backgroundColor = 'blue';
+    this.backgroundColor = this.defaultColor;
   }
 }
