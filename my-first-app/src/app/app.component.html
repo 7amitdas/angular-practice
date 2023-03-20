@@ -24,6 +24,8 @@
     </div>
   </div>
 </div> -->
+
+<!-- Game Start -->
 <div class="row">
   <div class="col-xs-12">
     <app-game-control (startGame)="onGameStarted($event)" (stopGame)="onGameStopped($event)"></app-game-control>
@@ -35,3 +37,11 @@
     <app-even *ngFor="let evenNo of evenNumbers" [inputNo]="evenNo"></app-even>
   </div>
 </div>
+<!-- Game End -->
+
+<!-- Custom Directive Start -->
+<!-- <p appBasicDir>Test Custom Directive</p> -->
+<p appAdvancedDir [defaultColor]="'brown'" highlightColor="red">Test Custom Directive With Better Approach</p>
+<p *ngIf="showCustomStrucDir">Test Custom Structural Div If Condition</p>
+<p *appUnless="showCustomStrucDir">Test Custom Structural Div Else Condition</p>
+<!-- Custom Directive End -->

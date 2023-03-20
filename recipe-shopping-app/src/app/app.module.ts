@@ -11,8 +11,6 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { FooterComponent } from './footer/footer.component';
-import { BasicDirective } from './custom-directive/basic.directive';
-import { AdvancedDirDirective } from './custom-directive/advanced-dir.directive';
 
 @NgModule({
   declarations: [
@@ -24,9 +22,7 @@ import { AdvancedDirDirective } from './custom-directive/advanced-dir.directive'
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    FooterComponent,
-    BasicDirective,
-    AdvancedDirDirective
+    FooterComponent
   ],
   imports: [
     BrowserModule,

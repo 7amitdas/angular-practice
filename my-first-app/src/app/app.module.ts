@@ -12,6 +12,9 @@ import { ServerElementComponent } from './server-element/server-element.componen
 import { GameControlComponent } from './game-control/game-control.component';
 import { OddComponent } from './odd/odd.component';
 import { EvenComponent } from './even/even.component';
+import { BasicDirective } from './custom-directive/basic.directive';
+import { AdvancedDirDirective } from './custom-directive/advanced-dir.directive';
+import { UnlessDirective } from './custom-directive/unless.directive';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { EvenComponent } from './even/even.component';
     GameControlComponent,
     OddComponent,
     EvenComponent,
+    BasicDirective,
+    AdvancedDirDirective,
+    UnlessDirective
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
