@@ -41,7 +41,16 @@
 
 <!-- Custom Directive Start -->
 <!-- <p appBasicDir>Test Custom Directive</p> -->
-<p appAdvancedDir [defaultColor]="'brown'" highlightColor="red">Test Custom Directive With Better Approach</p>
+<!-- <p appAdvancedDir [defaultColor]="'brown'" highlightColor="red">Test Custom Directive With Better Approach</p>
 <p *ngIf="showCustomStrucDir">Test Custom Structural Div If Condition</p>
-<p *appUnless="showCustomStrucDir">Test Custom Structural Div Else Condition</p>
+<p *appUnless="showCustomStrucDir">Test Custom Structural Div Else Condition</p> -->
 <!-- Custom Directive End -->
+
+<!-- Ng Switch Directive Start -->
+<div [ngSwitch]="cusValue">
+  <p *ngSwitchCase="5">Number is 5</p>
+  <p *ngSwitchCase="10">Number is 10</p>
+  <p *ngSwitchCase="15">Number is 15</p>
+  <p *ngSwitchDefault>Default Number is 20</p>
+</div>
+<!-- Ng Switch Directive End -->

@@ -8,6 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   showCustomStrucDir: boolean = false;
 
+  // Test Ng Switch
+  cusValue:number = 5;
+
   serverElements = [
     { type: 'server', name: 'Test Server', content: 'Just a Test!' },
   ];
