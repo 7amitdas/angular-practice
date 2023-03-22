@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AccountService } from './services/account.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   showCustomStrucDir: boolean = false;
 
   // Test Ng Switch
-  cusValue:number = 5;
+  cusValue: number = 5;
 
   serverElements = [
     { type: 'server', name: 'Test Server', content: 'Just a Test!' },
@@ -53,14 +54,29 @@ export class AppComponent {
     }
   }
 
-  onGamePaused(firedNo: number) {
-
-  }
+  onGamePaused(firedNo: number) {}
 
   onGameStopped(firedNo: number) {
     if (firedNo === 0) {
       this.oddNumbers = [];
       this.evenNumbers = [];
     }
+  }
+
+  accounts: {name:string, status:string} [] = [];
+
+  constructor(private accountService: AccountService) {
+  }
+
+  ngOnInit(): void {
+    this.accounts = this.accountService.accounts;
+  }
+
+  onAccountAdded(name: string, status: string) {
+    this.accountService.addAccount(name, status);
+  }
+
+  onStatusChanged(id: number, newStatus: string) {
+    this.accountService.updateStatus(id, newStatus);
   }
 }

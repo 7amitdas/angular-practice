@@ -15,6 +15,10 @@ import { EvenComponent } from './even/even.component';
 import { BasicDirective } from './custom-directive/basic.directive';
 import { AdvancedDirDirective } from './custom-directive/advanced-dir.directive';
 import { UnlessDirective } from './custom-directive/unless.directive';
+import { AccountComponent } from './account/account.component';
+import { NewAccountComponent } from './new-account/new-account.component';
+import { AccountService } from './services/account.service';
+import { LoggingService } from './services/logging.service';
 
 @NgModule({
   declarations: [
@@ -31,10 +35,12 @@ import { UnlessDirective } from './custom-directive/unless.directive';
     EvenComponent,
     BasicDirective,
     AdvancedDirDirective,
-    UnlessDirective
+    UnlessDirective,
+    AccountComponent,
+    NewAccountComponent
   ],
   imports: [BrowserModule, FormsModule],
-  providers: [],
+  providers: [AccountService, LoggingService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
