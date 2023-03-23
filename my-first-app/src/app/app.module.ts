@@ -19,6 +19,9 @@ import { AccountComponent } from './account/account.component';
 import { NewAccountComponent } from './new-account/new-account.component';
 import { AccountService } from './services/account.service';
 import { LoggingService } from './services/logging.service';
+import { ActiveUsersComponent } from './active-users/active-users.component';
+import { InactiveUsersComponent } from './inactive-users/inactive-users.component';
+import { CounterService } from './services/counter.service';
 
 @NgModule({
   declarations: [
@@ -37,10 +40,12 @@ import { LoggingService } from './services/logging.service';
     AdvancedDirDirective,
     UnlessDirective,
     AccountComponent,
-    NewAccountComponent
+    NewAccountComponent,
+    ActiveUsersComponent,
+    InactiveUsersComponent
   ],
   imports: [BrowserModule, FormsModule],
-  providers: [AccountService, LoggingService],
+  providers: [AccountService, LoggingService, CounterService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

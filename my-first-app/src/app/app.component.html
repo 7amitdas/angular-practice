@@ -55,11 +55,11 @@
 </div> -->
 <!-- Ng Switch Directive End -->
 <!-- Services Start -->
-<div class="container">
+<!-- <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2">
-      <!-- <app-new-account (accountAdded)="onAccountAdded($event)"></app-new-account> -->
-      <app-new-account></app-new-account>
+    <div class="col-xs-12 col-md-8 col-md-offset-2"> -->
+<!-- <app-new-account (accountAdded)="onAccountAdded($event)"></app-new-account> -->
+<!-- <app-new-account></app-new-account>
       <hr>
       <app-account
         *ngFor="let acc of accounts; let i = index"
@@ -67,5 +67,21 @@
         [id]="i"></app-account>
     </div>
   </div>
-</div>
+</div> -->
 <!-- Services End -->
+
+<!-- Assignment on Services Start -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-active-users></app-active-users>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-xs-12">
+      <app-inactive-users></app-inactive-users>
+    </div>
+  </div>
+</div>
+<!-- Assignment on Services End -->
