@@ -1,33 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Ingredient } from '../model/ingredient.model';
+import { ShoppingListService } from './shopping-list.service';
 
 @Component({
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
   styleUrls: ['./shopping-list.component.css'],
+  providers: [ShoppingListService]
 })
-export class ShoppingListComponent {
-  ingredients: Ingredient[] = [
-    new Ingredient('Apples', 5),
-    new Ingredient('Tomatos', 10),
-  ];
+export class ShoppingListComponent implements OnInit {
+  ingredients: Ingredient[];
 
-  constructor() {}
+  constructor(private shoppingListService : ShoppingListService) {}
 
-  ngOnInit() {}
-
-  onAdd(event: Ingredient) {
-    this.ingredients.push(event);
+  ngOnInit() {
+    this.ingredients = this.shoppingListService.getIngredients();
+    this.shoppingListService.ingredientsChanged.subscribe(
+      (inds: Ingredient[]) => {
+        this.ingredients = inds;
+      }
+    );
   }
 
-  onDelete(event: Ingredient) {
-    this.ingredients.splice(0, 1);
-  }
+  // onAdd(event: Ingredient) {
+  //    this.ingredients.push(event);
+  // }
 
-  onReset() {
-    this.ingredients = [
-      new Ingredient('Apples', 5),
-      new Ingredient('Tomatos', 10),
-    ];
-  }
+  // onDelete(event: Ingredient) {
+  //   this.ingredients.splice(0, 1);
+  // }
+
+  // onReset() {
+  //   this.ingredients = [
+  //     new Ingredient('Apples', 5),
+  //     new Ingredient('Tomatos', 10),
+  //   ];
+  // }
 }

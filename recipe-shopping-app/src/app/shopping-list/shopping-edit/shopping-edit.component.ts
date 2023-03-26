@@ -1,27 +1,34 @@
-import { Component, EventEmitter, ViewChild, Output, ElementRef } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ElementRef,
+  ViewChild,
+  EventEmitter,
+  Output
+} from '@angular/core';
 import { Ingredient } from 'src/app/model/ingredient.model';
 
 @Component({
   selector: 'app-shopping-edit',
   templateUrl: './shopping-edit.component.html',
-  styleUrls: ['./shopping-edit.component.css'],
+  styleUrls: ['./shopping-edit.component.css']
 })
-export class ShoppingEditComponent {
-  @ViewChild('nameInput', {static:true}) name: ElementRef;
-  @ViewChild('amountInput', {static:true}) amount: ElementRef;
+export class ShoppingEditComponent implements OnInit {
+  @ViewChild('nameInput', { static: true }) name: ElementRef;
+  @ViewChild('amountInput', { static: true }) amount: ElementRef;
   @Output('btnAddClicked') addBtnClicked = new EventEmitter<Ingredient>();
-  @Output('btnDeleteClicked') delBtnClicked = new EventEmitter<Ingredient>();
-  @Output('btnResetClicked') resetBtnClicked = new EventEmitter<void>();
+
+  constructor() { }
+
+  ngOnInit() {
+  }
 
   onAddClick() {
-    this.addBtnClicked.emit(new Ingredient(this.name.nativeElement.value, this.amount.nativeElement.value));
-  }
-
-  onDeleteClick() {
-    this.delBtnClicked.emit(new Ingredient(this.name.nativeElement.value, this.amount.nativeElement.value));
-  }
-
-  onResetClick() {
-    this.resetBtnClicked.emit();
+    this.addBtnClicked.emit(
+      new Ingredient(
+        this.name.nativeElement.value,
+        this.amount.nativeElement.value
+      )
+    );
   }
 }
