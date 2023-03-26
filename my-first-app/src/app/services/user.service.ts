@@ -2,7 +2,9 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { CounterService } from './counter.service';
 import { LoggingService } from './logging.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class UserService {
   activeUsers = ['Sam', 'Dean'];
   inactiveUsers = ['Castiel', 'Crowley'];
