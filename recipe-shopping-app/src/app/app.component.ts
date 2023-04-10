@@ -7,9 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Recipe Shopping App';
-  loadedMenuItem :string = 'recipe';
-
-  onMenuItemSelected(eventData) {
-    this.loadedMenuItem = eventData;
-  }
 }

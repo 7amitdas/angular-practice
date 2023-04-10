@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,9 +6,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  @Output('getSelectedMenuItemName') selectedMenu = new EventEmitter<string>();
+  // @Output('getSelectedMenuItemName') selectedMenu = new EventEmitter<string>();
 
-  onSelectMenuItem(menuItemName: string) {
-    this.selectedMenu.emit(menuItemName);
-  }
+  // onSelectMenuItem(menuItemName: string) {
+  //   this.selectedMenu.emit(menuItemName);
+  // }
 }

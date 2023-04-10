@@ -1,10 +1,9 @@
 <div class="row">
   <div class="col-xs-12">
-    <a
-      href="#"
-      class="list-group-item clearfix recipe-item"
-      (click)="onSelectRecipe()"
-    >
+    <a style="cursor: pointer;"
+      routerLinkActive="custom-active-link"
+      [routerLink]="[index]"
+      class="list-group-item clearfix recipe-item">
       <div class="pull-left">
         <h4 class="list-group-item-heading">{{ singleRecipeItem.name }}</h4>
         <p class="list-group-item-text">{{ singleRecipeItem.description }}</p>
