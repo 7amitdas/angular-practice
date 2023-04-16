@@ -71,7 +71,7 @@
 <!-- Services End -->
 
 <!-- Assignment on Services Start -->
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col-xs-12">
       <app-active-users></app-active-users>
@@ -83,5 +83,28 @@
       <app-inactive-users></app-inactive-users>
     </div>
   </div>
-</div>
+</div> -->
 <!-- Assignment on Services End -->
+
+<!-- Observables Practice Start -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <a routerLink="/">Home</a> |
+      <a [routerLink]="['observ', 'user', 1]">
+        User 1
+      </a>
+      |
+      <a [routerLink]="['observ', 'user', 2]">
+        User 2
+      </a>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+<!-- Observables Practice End -->

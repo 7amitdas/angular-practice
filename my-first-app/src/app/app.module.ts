@@ -22,6 +22,9 @@ import { LoggingService } from './services/logging.service';
 import { ActiveUsersComponent } from './active-users/active-users.component';
 import { InactiveUsersComponent } from './inactive-users/inactive-users.component';
 import { CounterService } from './services/counter.service';
+import { ObservHomeComponent } from './observ-home/observ-home.component';
+import { ObservUserComponent } from './observ-user/observ-user.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -42,9 +45,11 @@ import { CounterService } from './services/counter.service';
     AccountComponent,
     NewAccountComponent,
     ActiveUsersComponent,
-    InactiveUsersComponent
+    InactiveUsersComponent,
+    ObservHomeComponent,
+    ObservUserComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [AccountService, LoggingService, CounterService],
   bootstrap: [AppComponent],
 })
