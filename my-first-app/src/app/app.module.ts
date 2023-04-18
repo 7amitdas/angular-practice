@@ -25,6 +25,7 @@ import { CounterService } from './services/counter.service';
 import { ObservHomeComponent } from './observ-home/observ-home.component';
 import { ObservUserComponent } from './observ-user/observ-user.component';
 import { AppRoutingModule } from './app-routing.module';
+import { NgFormPracticeComponent } from './ng-form-practice/ng-form-practice.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { AppRoutingModule } from './app-routing.module';
     InactiveUsersComponent,
     ObservHomeComponent,
     ObservUserComponent,
+    NgFormPracticeComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [AccountService, LoggingService, CounterService],
