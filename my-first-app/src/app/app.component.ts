@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AccountService } from './services/account.service';
 import { UserService } from './services/user.service';
+import { ObserveUserService } from './observ-user/observ-user.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [UserService]
+  providers: [UserService],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   showCustomStrucDir: boolean = false;
 
   // Test Ng Switch
@@ -65,13 +67,25 @@ export class AppComponent implements OnInit {
     }
   }
 
-  accounts: {name:string, status:string} [] = [];
+  accounts: { name: string; status: string }[] = [];
 
-  constructor(private accountService: AccountService) {
-  }
+  constructor(
+    private accountService: AccountService,
+    private obsUserService: ObserveUserService
+  ) {}
+
+  userActivated: boolean = false;
+  private activatedSub: Subscription;
 
   ngOnInit(): void {
     this.accounts = this.accountService.accounts;
+    this.activatedSub = this.obsUserService.activatedEmitter.subscribe((isActivated) => {
+      this.userActivated = isActivated;
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.activatedSub.unsubscribe();
   }
 
   onAccountAdded(name: string, status: string) {
