@@ -42,4 +42,8 @@ ngOnDestroy(): void {
   //     new Ingredient('Tomatos', 10),
   //   ];
   // }
+
+  onEditItem(id: number) {
+    this.shoppingListService.startedEditing.next(id);
+  }
 }
