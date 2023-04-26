@@ -12,6 +12,7 @@ export class RecipeEditComponent implements OnInit {
   id: number;
   editMode: boolean = false;
   recipeForm: FormGroup;
+  isDisabledAllIngreBtn: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -94,9 +95,24 @@ export class RecipeEditComponent implements OnInit {
         ]),
       })
     );
+    if ((<FormArray>this.recipeForm.get('ingredients')).length > 0) {
+      this.isDisabledAllIngreBtn = false;
+    } else {
+      this.isDisabledAllIngreBtn = true;
+    }
   }
 
   onDeleteIngredient(idx: number) {
     (<FormArray>this.recipeForm.get('ingredients')).removeAt(idx);
+    if ((<FormArray>this.recipeForm.get('ingredients')).length > 0) {
+      this.isDisabledAllIngreBtn = false;
+    } else {
+      this.isDisabledAllIngreBtn = true;
+    }
+  }
+
+  onDeleteAllIngredients() {
+    (<FormArray>this.recipeForm.get('ingredients')).clear();
+    this.isDisabledAllIngreBtn = true;
   }
 }
