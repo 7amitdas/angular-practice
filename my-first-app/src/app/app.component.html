@@ -7,7 +7,7 @@
   ></app-cockpit>
   <hr />
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-12">
       <button class="btn btn-primary" (click)="onChangeFirst()">Change First Element</button>
       <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy First Component</button>
       <app-server-element
@@ -27,12 +27,12 @@
 
 <!-- Game Start -->
 <!-- <div class="row">
-  <div class="col-xs-12">
+  <div class="col-12">
     <app-game-control (startGame)="onGameStarted($event)" (stopGame)="onGameStopped($event)"></app-game-control>
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-12">
     <app-odd *ngFor="let oddNo of oddNumbers" [inputNo]="oddNo"></app-odd>
     <app-even *ngFor="let evenNo of evenNumbers" [inputNo]="evenNo"></app-even>
   </div>
@@ -57,7 +57,7 @@
 <!-- Services Start -->
 <!-- <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2"> -->
+    <div class="col-12 col-md-8 col-md-offset-2"> -->
 <!-- <app-new-account (accountAdded)="onAccountAdded($event)"></app-new-account> -->
 <!-- <app-new-account></app-new-account>
       <hr>
@@ -73,13 +73,13 @@
 <!-- Assignment on Services Start -->
 <!-- <div class="container">
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-12">
       <app-active-users></app-active-users>
     </div>
   </div>
   <hr />
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-12">
       <app-inactive-users></app-inactive-users>
     </div>
   </div>
@@ -89,7 +89,7 @@
 <!-- Observables Practice Start -->
 <!-- <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <div class="col-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <a routerLink="/observ">Home</a> |
       <a [routerLink]="['observ', 'user', 1]">
         User 1
@@ -104,7 +104,7 @@
   <p *ngIf="userActivated">Activated!</p>
   <hr />
   <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <div class="col-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <router-outlet></router-outlet>
     </div>
   </div>
