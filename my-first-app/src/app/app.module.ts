@@ -26,6 +26,8 @@ import { ObservHomeComponent } from './observ-home/observ-home.component';
 import { ObservUserComponent } from './observ-user/observ-user.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NgFormPracticeComponent } from './ng-form-practice/ng-form-practice.component';
+import { HttpReqComponent } from './http-req/http-req.component';
+import { HttpClientModule } from '@angular/common/http';  
 
 @NgModule({
   declarations: [
@@ -50,8 +52,9 @@ import { NgFormPracticeComponent } from './ng-form-practice/ng-form-practice.com
     ObservHomeComponent,
     ObservUserComponent,
     NgFormPracticeComponent,
+    HttpReqComponent,
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [AccountService, LoggingService, CounterService],
   bootstrap: [AppComponent],
 })
